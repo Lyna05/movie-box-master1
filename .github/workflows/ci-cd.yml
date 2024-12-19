@@ -35,6 +35,4 @@ jobs:
       - name: Run tests
         run: echo 'Running npm test'
 
-      # Deploy (optional for this exercise, you can simulate)
-      - name: Deployment
-        run: echo 'Deployment stage (simulate deployment here)'
+      
