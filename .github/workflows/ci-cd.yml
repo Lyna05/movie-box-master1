@@ -1,0 +1,40 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Setup Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build the application
+      - name: Build application
+        run: npm run build
+
+      # Simulate test (since no test module exists)
+      - name: Run tests
+        run: echo 'Running npm test'
+
+      # Deploy (optional for this exercise, you can simulate)
+      - name: Deployment
+        run: echo 'Deployment stage (simulate deployment here)'
